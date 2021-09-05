@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-
 import './defaultRangeSlider.sass'
 
 function DefaultRangeSlider({value, initMin, initMax, step, onChange}) {
