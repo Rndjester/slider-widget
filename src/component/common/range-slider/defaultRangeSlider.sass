@@ -1,0 +1,39 @@
+.default__slider,
+.default__slider::-webkit-slider-thumb
+    -webkit-appearance: none
+    -webkit-tap-highlight-color: transparent
+    background-color: transparent
+
+.default__slider
+    position: absolute
+    top: -13px
+    width: calc(100% + 5px)
+    left: -5px
+    &-track
+        position: relative
+        background-color: #0071B2
+        width: 255px
+        border-radius: 2px
+        height: 4px
+        margin-top: 20px
+.default__slider::-webkit-slider-thumb
+    background-color: #0071B2
+    border: none
+    border-radius: 50%
+    cursor: pointer
+    height: 18px
+    width: 18px
+    margin-top: 4px
+    pointer-events: all
+    position: relative
+.default__slider::-moz-range-thumb
+    background-color: #f1f5f7
+    border: none
+    border-radius: 50%
+    box-shadow: 0 0 1px 1px #ced4da
+    cursor: pointer
+    height: 18px
+    width: 18px
+    margin-top: 4px
+    pointer-events: all
+    position: relative
