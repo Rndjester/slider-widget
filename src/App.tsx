@@ -1,11 +1,11 @@
 import React from 'react';
-import Widget from "./component/widget/widget";
+import Widget from "./component/widget";
 
 
 function App() {
     return (
         <div>
-           <Widget step={10} initValue={0} initMin={0} initMax={1000}/>
+           <Widget step={10} initValue={0} min={0} max={1000}/>
         </div>
     )
 }

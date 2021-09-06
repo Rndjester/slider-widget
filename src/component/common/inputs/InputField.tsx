@@ -1,5 +1,5 @@
 import * as React from "react";
-import classes from './field.module.sass';
+import classes from './InputField.module.sass';
 
 const InputField = ({useCaption, value, onChange, onlyNumber}) => {
     if (onlyNumber) {

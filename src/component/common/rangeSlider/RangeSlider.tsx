@@ -1,7 +1,7 @@
-import React, {useState} from "react";
-import './defaultRangeSlider.sass'
+import React from "react";
+import './RangeSlider.sass'
 
-function DefaultRangeSlider({value, initMin, initMax, step, onChange}) {
+function RangeSlider({value, initMin, initMax, step, onChange}) {
     return (
         <div className={"default__slider-track"}>
             <input type="range"
@@ -14,4 +14,4 @@ function DefaultRangeSlider({value, initMin, initMax, step, onChange}) {
         </div>
     )
 }
-export default DefaultRangeSlider
+export default RangeSlider

@@ -1,7 +1,7 @@
 import React, { useState, useCallback, FC } from "react";
-import DefaultRangeSlider from "../common/range-slider/defaultRangeSlider";
-import InputField from "../common/inputs/InputField";
-import classes from "./widget.module.sass";
+import RangeSlider from "../common/rangeSlider";
+import InputField from "../common/inputs";
+import classes from "./Widget.module.sass";
 
 interface Props {
     /**
@@ -52,7 +52,7 @@ const Widget: FC<Props> = ({
     return (
         <div className={classes.widget}>
             <InputField value={value} onChange={onChange} useCaption={false} onlyNumber={true} />
-            <DefaultRangeSlider
+            <RangeSlider
                 value={value}
                 initMin={min}
                 step={step}
