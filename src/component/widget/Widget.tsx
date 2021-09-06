@@ -54,9 +54,9 @@ const Widget: FC<Props> = ({
             <InputField value={value} onChange={onChange} useCaption={false} onlyNumber={true} />
             <RangeSlider
                 value={value}
-                initMin={min}
+                min={min}
                 step={step}
-                initMax={max}
+                max={max}
                 onChange={onChange}
             />
         </div>

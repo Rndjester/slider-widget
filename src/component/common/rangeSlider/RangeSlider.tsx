@@ -1,17 +1,49 @@
-import React from "react";
+import React, {FC} from "react";
 import './RangeSlider.sass'
 
-function RangeSlider({value, initMin, initMax, step, onChange}) {
-    return (
-        <div className={"default__slider-track"}>
-            <input type="range"
-                   className={"default__slider"}
-                   step = {step}
-                   min = {initMin}
-                   max = {initMax}
-                   value = {value}
-                   onChange = {(e) => onChange(e.target.value)}/>
-        </div>
-    )
+interface Props {
+    /**
+     * Значение в input.
+     * По умолчанию: 0
+     */
+    value?: number;
+    /**
+     * Шаг....
+     * По умолчанию: 10
+     */
+    step?: number;
+    /**
+     * Минимальное значение
+     * По умолчанию: 0
+     */
+    min?: number;
+    /**
+     * Максимальное значение
+     * По умолчанию: 100
+     */
+    max?: number;
+    /**
+     * Функция обновления значения при изменении
+     */
+    onChange?: (newValue: number) => void;
+}
+const RangeSlider: FC<Props> = ({
+                               value = 0,
+                               step = 10,
+                               min = 0,
+                               max = 100,
+                               onChange
+                           }) => {
+        return (
+            <div className={"default__slider-track"}>
+                <input type="range"
+                       className={"default__slider"}
+                       step={step}
+                       min={min}
+                       max={max}
+                       value={value}
+                       onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChange?.(parseFloat(e.currentTarget.value))}/>
+            </div>
+        )
 }
 export default RangeSlider
