@@ -28,7 +28,7 @@ interface Props {
 
 const Widget: FC<Props> = ({
                                initValue = 0,
-                               step = 10,
+                               step = 1,
                                min = 0,
                                max = 100,
                            }) => {
@@ -51,7 +51,12 @@ const Widget: FC<Props> = ({
     );
     return (
         <div className={classes.widget}>
-            <InputField value={value} onChange={onChange} useCaption={false} onlyNumber={true} />
+            <InputField
+                value={value}
+                onChange={onChange}
+                useCaption={false}
+                onlyNumber={false}
+                type = {'number'} />
             <RangeSlider
                 value={value}
                 min={min}

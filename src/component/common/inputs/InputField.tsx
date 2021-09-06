@@ -22,13 +22,24 @@ interface Props {
      * По умолчанию: false
      */
     onlyNumber?: boolean
+    /**
+     * тип инпута "text" или "number"
+     * По умолчанию: "text"
+     */
+    type?: "text" | "number"
 }
 const InputField: FC<Props> = ({
                                     useCaption = false,
                                     value = 0,
                                     onChange,
-                                    onlyNumber = false
+                                    onlyNumber = false,
+                                    type = 'text'
                                 }) => {
+    /**
+     * функция проверки на число если выставлен флаг onlyNumber,
+     * функция была добавлена до определения типа инпута, я решил ее оставить
+     * вдруг потребуются только целые числа без точек
+     */
     const checkTypeOfValue = (str: string,
                               onlyNumber: boolean,
                               onChange) => {
@@ -40,15 +51,15 @@ const InputField: FC<Props> = ({
             }
             else (onChange(''))
         }
+        else {
+            onChange(str)
+        }
     }
-    /**
-     * Можно было конечно использовать для чисел type = 'number'
-     * и выключить вебкитом инкрементер, ну я почему то захотел сделать регуляркой
-     */
+
     return (
         <label className={classes.field__label}>
 
-            <input type="text"
+            <input type={type}
                    value={value}
                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => checkTypeOfValue(e.target.value, onlyNumber, onChange)}
                    className={classes.field__input}

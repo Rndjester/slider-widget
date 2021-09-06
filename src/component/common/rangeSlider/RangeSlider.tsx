@@ -1,5 +1,5 @@
 import React, {FC} from "react";
-import './RangeSlider.sass'
+import classes from './RangeSlider.module.sass'
 
 interface Props {
     /**
@@ -35,9 +35,9 @@ const RangeSlider: FC<Props> = ({
                                onChange
                            }) => {
         return (
-            <div className={"default__slider-track"}>
+            <div className={classes["default__slider-track"]}>
                 <input type="range"
-                       className={"default__slider"}
+                       className={classes.default__slider}
                        step={step}
                        min={min}
                        max={max}
