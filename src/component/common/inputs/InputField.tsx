@@ -35,15 +35,19 @@ const InputField: FC<Props> = ({
         if (onlyNumber) {
             const newStr  = str.replace(/[^.\d]+/g,"")
             if (newStr !== "") {
-                console.log(newStr)
                 const numberValue: number = parseFloat(newStr)
                 onChange(numberValue)
             }
             else (onChange(''))
         }
     }
+    /**
+     * Можно было конечно использовать для чисел type = 'number'
+     * и выключить вебкитом инкрементер, ну я почему то захотел сделать регуляркой
+     */
     return (
         <label className={classes.field__label}>
+
             <input type="text"
                    value={value}
                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => checkTypeOfValue(e.target.value, onlyNumber, onChange)}
